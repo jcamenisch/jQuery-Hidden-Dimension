@@ -1,7 +1,7 @@
-Real Size
-=========
+Real Dimensions
+===============
 
-The Real Size jQuery plugin provides the dimensions of invisible DOM elements.
+The Real Dimensions jQuery plugin provides the dimensions of invisible DOM elements.
 
 The Problem
 -----------
@@ -18,7 +18,8 @@ Dependencies
 Usage
 -----
 
-Once you include jQuery and real_dimensions.js in your page, you can call the following four functions:
+Once you include jQuery and real_dimensions.js in your page, you can call the realDim 
+on any jQuery instance with the following four options:
 
     var
       width = $('#my-hidden-element').realDim('width'),
