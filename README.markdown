@@ -20,8 +20,8 @@ Usage
 
 Once you include jQuery and real_dimensions.js in your page, you can call the following four functions:
 
-var
-  width = $('#my-hidden-element').realDim('width'),
-  height = $('#my-hidden-element').realDim('height'),
-  outerWidth = $('#my-hidden-element').realDim('outerWidth'),
-  outerHeight = $('#my-hidden-element').realDim('outerHeight');
+    var
+      width = $('#my-hidden-element').realDim('width'),
+      height = $('#my-hidden-element').realDim('height'),
+      outerWidth = $('#my-hidden-element').realDim('outerWidth'),
+      outerHeight = $('#my-hidden-element').realDim('outerHeight');
