@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script src="../real-dimensions/real-dimensions.js"></script>
+  <style>
+    #test-elements, .invisible-wrapper {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <td rowspan="2">Element</td>
+        <td colspan="4">While hidden</td>
+        <td colspan="4">After shown</td>
+      </tr>
+      <tr>
+        <td>width</td>
+        <td>outerWidth</td>
+        <td>height</td>
+        <td>outerHeight</td>        
+        <td>width</td>
+        <td>outerWidth</td>
+        <td>height</td>
+        <td>outerHeight</td>        
+      </tr>
+    </thead>
+    <tbody id="results">
+    </tbody>
+  </table>
+  <div class="visible-wrapper">
+    <div id="test-elements">
+      <p id="p-1">P 1</p>
+    </div>
+    <div class="invisible-wrapper">
+      <div class="test-element" id="div-1">Div<br />1</div>
+    </div>
+  </div>
+  
+
+
+  <script>
+
+    var result_rows = $('#results');
+    
+    $('#test-elements *, .test-element').each(function(){
+      var
+        test_element = $(this),
+        result_row = $('<tr />').appendTo(result_rows);
+      
+      test_element.data('result-row',result_row);
+
+      $('<td />')
+        .html( test_element.attr('id') )
+        .appendTo(result_row);
+      $.each(['width','outerWidth','height','outerHeight'], function(i, dimension){
+        $('<td />').
+          html( test_element.realDim(dimension) ).
+          appendTo(result_row);
+      });
+      
+    });
+
+    $('#test-elements, .invisible-wrapper').show();
+
+    $('#test-elements *, .test-element').each(function(){
+      var
+        test_element = $(this),
+        result_row = test_element.data('result-row');
+      
+      $.each(['width','outerWidth','height','outerHeight'], function(i, dimension){
+        $('<td />').
+          html( test_element[dimension]() ).
+          appendTo(result_row);
+      });
+
+    });
+
+  </script>
+</body>
+</html>
