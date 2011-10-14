@@ -35,5 +35,5 @@ size, and then execute the requested function against the sized element.
 Known Issues
 ------------
 
-- Elements whose nearest visible ancestor is <body> cannot currently be examined with
+- Elements whose nearest visible ancestor is body cannot currently be examined with
   Real Dimensions. Return value will be undefined, and other problems may also arise.
