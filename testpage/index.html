@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script src="../jquery-hidden-dimensions/jquery.hidden-dimensions.js"></script>
+  <script src="../jquery-hidden-dimension/jquery.hidden-dimension.js"></script>
   <style>
     #test-elements, .invisible-wrapper {
       display: none;
@@ -58,7 +58,7 @@
         .appendTo(result_row);
       $.each(['width','outerWidth','height','outerHeight'], function(i, dimension){
         $('<td />').
-          html( test_element.realDim(dimension) ).
+          html( test_element.hiddenDimension(dimension) ).
           appendTo(result_row);
       });
       

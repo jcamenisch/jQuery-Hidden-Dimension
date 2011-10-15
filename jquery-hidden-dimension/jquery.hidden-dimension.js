@@ -1,5 +1,5 @@
 (function($){
-  $.fn.realDim = function(){
+  $.fn.hiddenDimension = function(){
     if (arguments.length && typeof arguments[0] == 'string') {
       var dimension = arguments[0]
 

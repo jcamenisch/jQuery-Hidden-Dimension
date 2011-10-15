@@ -1,7 +1,7 @@
-Hidden Dimensions
-=================
+Hidden Dimension
+================
 
-The Hidden Dimensions jQuery plugin provides the dimensions of invisible DOM elements.
+The Hidden Dimension jQuery plugin provides the dimensions of invisible DOM elements.
 
 The Problem
 -----------
@@ -18,22 +18,24 @@ Dependencies
 Usage
 -----
 
-Once you include jQuery and jquery.hidden-dimensions.js in your page, you can use $(selector).realDim
-to send any standard jQuery dimensional function as follows:
+Once you include jQuery and jquery.hidden-dimensions.js in your page, you can use 
+$(selector).hiddenDimension(dimension) to send any standard jQuery dimensional function as follows:
 
     var
-      width = $('#my-hidden-element').realDim('width'),
-      height = $('#my-hidden-element').realDim('height'),
-      outerWidth = $('#my-hidden-element').realDim('outerWidth'),
-      outerHeight = $('#my-hidden-element').realDim('outerHeight'),
-      innerWidth = $('#my-hidden-element').realDim('innerWidth'),
-      innerHeight = $('#my-hidden-element').realDim('innerHeight');
+      width = $('#my-hidden-element').hiddenDimension('width'),
+      height = $('#my-hidden-element').hiddenDimension('height'),
+      outerWidth = $('#my-hidden-element').hiddenDimension('outerWidth'),
+      outerHeight = $('#my-hidden-element').hiddenDimension('outerHeight'),
+      innerWidth = $('#my-hidden-element').hiddenDimension('innerWidth'),
+      innerHeight = $('#my-hidden-element').hiddenDimension('innerHeight');
 
-The realDim function will set up a clone of the element at its visible
-size, and then execute the requested function against the sized element.
+The hiddenDimension function will use the DOM to set up an off-screen clone of the element 
+at its visible size, and then execute the requested function against the sized element. This means you
+could send any jQuery function to hiddenDimension, and get the result from the clone. The ones
+listed above are simply functions you would be most likely to need.
 
 Known Issues
 ------------
 
 - Elements whose nearest visible ancestor is body cannot currently be examined with
-  Real Dimensions. Return value will be undefined, and other problems may also arise.
+  Real Dimensions. Return value will be undefined.
