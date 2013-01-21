@@ -18,7 +18,7 @@
               width: visible_container.width(),
               height: visible_container.height()
             })
-            .appendTo('body'),
+            .appendTo(visible_container),
           element_index = $('*',visible_container).index(this),
           element_clone = $('*',container_clone).slice(element_index);
         
